@@ -33,11 +33,11 @@ async function startApp() {
         res.json(rows);
     });
 
-    app.post("/api/recommendations", async (req, res) => {
+    app.post("/api/tasks", async (req, res) => {
         const { title } = req.body;
 
         await pool.query(
-            `INSERT INTO recommendations (title)
+            `INSERT INTO tasks (title)
  VALUES (?)`,
             [title]
         );
